@@ -11,19 +11,30 @@ THIS IS THE BODY OF HTML
 <div id="paragraph1">
     Enter your info here:
 </div>
+<!-- <script type="module" src="/defs.js">  -->
 <script>
-    // import our testclass from defs.js
+    // import our testclass from defs.js   -----> Doesn't work!
+    // import * as Module from "./defs.js"
+    // const Rectangle = require("./defs");
+    // let r = new Rectangle(8,8);
+    // addText(r);
 
-
+    // adding new text to my own html5 dynamically
     function addText(text) {
         if (!document.getElementById) return;
         var node = document.createTextNode(" " + text)
         document.getElementById("paragraph1").appendChild(node);
     }
-
-    addText(123123);
     addText("TEST");
 
+    // creating JSON files for Websocket connection  https://www.youtube.com/watch?v=LEBho3PUV3s
+    var gameState = {
+        data: [],
+        myHeight: 8,
+        myWidth: 64,
+    }
+
+    // Websocket connection
     const webSocketConnection = new WebSocket("ws://localhost:8083");
     webSocketConnection.addEventListener("open", () => {
         webSocketConnection.send("testmessage");
