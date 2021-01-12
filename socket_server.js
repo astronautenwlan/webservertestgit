@@ -21,7 +21,7 @@ wss.on("connection", oneSingleConnectionObject => {
         oneSingleConnectionObject.send("Hey client, I received this Text from you:   " + someData);
     })
 
-    // accessing just a property of a returned message. Here we access the property "dataProperty" from the received data of the server
+    // accessing just a property of a returned message. Here we access the property "dataProperty" from the received data
     oneSingleConnectionObject.on("message", ({dataProperty}) => {
         console.log('Client has sent Server some Data: ' + dataProperty);
         oneSingleConnectionObject.send("Extracting data property: " + dataProperty);
