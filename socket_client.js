@@ -1,0 +1,1 @@
+var connection = new WebSocket('ws://html5rocks.websocket.org/echo', ['soap', 'xmpp']);
