@@ -8,11 +8,25 @@
 </head>
 <body>
 THIS IS THE BODY OF HTML
+<div id="paragraph1">
+    Enter your info here:
+</div>
 <script>
+    // import our testclass from defs.js
+
+
+    function addText(text) {
+        if (!document.getElementById) return;
+        var node = document.createTextNode(" " + text)
+        document.getElementById("paragraph1").appendChild(node);
+    }
+
+    addText(123123);
+    addText("TEST");
+
     const webSocketConnection = new WebSocket("ws://localhost:8083");
     webSocketConnection.addEventListener("open", () => {
-        console.log("I am the server, an we are connected now");
-        webSocketConnection.send("Hey, I am a client, and this is my payload");
+        webSocketConnection.send("testmessage");
     })
 
     webSocketConnection.addEventListener("message", someEventMessage => {

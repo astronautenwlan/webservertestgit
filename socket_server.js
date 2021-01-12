@@ -4,6 +4,11 @@ const app = express();
 app.get("/", function (req, res) {
     res.sendFile(__dirname + "/index.html")
 })
+
+app.get("/defs.js", function (req, res) {
+    res.sendFile(__dirname + "/defs.js")
+})
+
 app.listen(8082, () => console.log("Webserver Created"));
 
 // Websocket stuff:  https://www.youtube.com/watch?v=FduLSXEHLng
