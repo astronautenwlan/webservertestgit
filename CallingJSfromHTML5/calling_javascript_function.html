@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CallJavascriptFunction From HTML5</title>
+</head>
+<body>
+Random Text from Webpage
+
+
+<script src="SubClassCar.js"></script>
+<!-- The Script needs to be loaded, as seen above, and within the script one instance needs to be created, then we can access the name of this instance -->
+<script>
+    // we have to console.log in a separate Script instance
+    console.log("calling only subclass 'Car'.getYear(): " + oneCar.getYear())
+    console.log("Testing Log")
+</script>
+
+<script src="MainClassGarage.js"></script>
+
+<script>
+    console.log("calling the mainClass with our Car as Argument and getting the car's Year: " + oneGarage.getCars()[0].getYear())
+</script>
+
+</body>
+</html>
