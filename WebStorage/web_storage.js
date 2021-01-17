@@ -1,7 +1,8 @@
 let gameID = "123123"
 
-localStorage.setItem(gameID, "thatsmyname")
+localStorage.setItem(gameID, "That is my Name")
 console.log(localStorage.getItem(gameID))
+
 
 
 let testWalter = {
