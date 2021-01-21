@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>demo</title>
+    <style>
+        .ease {
+            transition: all 300ms ease;
+        }
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 28px;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #8a8a8a;
+            -webkit-transition: 0.4s;
+            transition: 0.4s;
+        }
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 24px;
+            width: 24px;
+            left: 4px;
+            bottom: 2px;
+            background-color: #2c2c2c;
+            -webkit-transition: 0.4s;
+            transition: 0.4s;
+
+        }
+
+        input:checked + .slider {
+            background-color: #8a8a8a;
+        }
+
+        input:checked + .slider:before {
+            background-color: #f3c93c;
+            content: url("data:image/svg+xml; utf8, <svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 15 15'><path fill-rule='evenodd' d='M7.5.469c.9 0 1.629.754 1.629 1.675 0 .22-.048.443-.138.654l-.028.059.114.04c.765.278 1.456.76 1.992 1.387l.13.16.116.153c.56.784.885 1.732.926 2.7l.004.207v3.685h.451c.277 0 .51.199.57.462l.011.067.004.07c0 .305-.226.56-.517.594l-.068.004H9.641v.06c-.058 1.08-.87 1.957-1.907 2.072l-.116.01-.118.003c-1.141 0-2.079-.927-2.14-2.084l-.002-.06H2.311c-.278 0-.514-.2-.576-.463l-.012-.067-.004-.07c0-.304.231-.559.524-.594l.068-.004h.45l.001-3.685c0-.9.248-1.792.705-2.562l.109-.175.116-.17c.562-.78 1.35-1.378 2.234-1.7l.113-.038-.03-.066c-.05-.127-.087-.257-.109-.388l-.016-.13-.005-.131c0-.92.727-1.675 1.621-1.675zm.97 11.917H6.53v.031c.043.482.416.862.882.906l.088.004c.261 0 .506-.103.688-.292.157-.162.257-.383.28-.611l.002-.038zm-2.748-8.08c-1.06.63-1.734 1.785-1.786 3.04l-.004.158v3.685h7.136V7.504c0-1.266-.628-2.444-1.652-3.117l-.13-.081c-1.106-.652-2.474-.654-3.564 0zm1.614-2.603c-.177.08-.287.248-.287.44 0 .262.202.471.451.471.188 0 .35-.11.42-.284.07-.18.032-.388-.096-.52-.133-.137-.322-.176-.488-.107z'/></svg>");
+            margin:auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-items: center;
+        }
+
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px #f3c93c;
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 30px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+    </style>
+</head>
+<body>
+<label class="switch" v-if="option.icon && option.icon === 'mute'">
+    <input
+            type="checkbox"
+            checked="true"
+    />
+    <span class="slider round"></span>
+</label>
+</body>
+</html>
